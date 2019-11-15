@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/search.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+  <title>Martinque Admin Area</title>
+</head>
+<body>
+  <nav class="navbar navbar-toggleable-sm navbar-inverse bg-inverse p-0">
+    <div class="container">
+      <button class="navbar-toggler navbar-toggler-right" data-target="#mynavbar" data-toggle="collapse">
+        <span class="nabbar-toggler-icon"></span>
+      </button>
+      <img src="img/lock.jpg" class="img-responsive img-log" alt="">
+      <a href="index.html" class=navbar-brand mr-3>Martinque</a>
+      <div class="collapse navbar-collapse" id="mynavbar"></div>
+      <ul class="navbar-nav">
+        <li class="nav-item px-2">
+          <a href="index.html" class="nav-link">Homepage</a>
+        </li>
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown mr-3">
+          <a href="#" class="nav-link">
+            <i class="fa.fa-user"></i>Welcome Administrator
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="login.html" class="nav-link"><i class="fa fa-user-times"></i>Logout</a>
+        </li>
+      </ul>
+    </div>   
+  </div>
+  </nav>
+  <section id="sections" class="py-4 mb-4 bg-faded">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <input type="button" value="Items to Order" class="btn btn-primary btn-block" data-toggle="modal">
+            </a>
+          </div>
+          <div class="col-md-3">
+              <input type="button" value="Expired Items to be replaced" class="btn btn-primary btn-block" data-toggle="modal">
+              </a>
+          </div>
+          <div class="col-md-3">
+                <input type="button" value="New Record" class="btn btn-primary btn-block" data-toggle="modal">
+
+                </a>
+          </div>
+          <div class="col-md-3">
+                <input type="button" value="Sell Item" class="btn btn-primary btn-block" data-toggle="modal">
+
+                </a>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-9">
+            <div class="container">
+
+            </div>
+          </div>
+          <div class="col-md-3">
+              <div class="card-block">
+                <input type="button" value="Delete Record" class="btn btn-primary btn-block" data-toggle="modal">
+              </div>
+              <div class="card-block">
+                  <input type="button" value="Stock Arrival" class="btn btn-primary btn-block" data-toggle="modal">
+                </div>
+                <div class="card-block">
+                    <input type="button" value="Revenue/Profit/Payment" class="btn btn-primary btn-block" data-toggle="modal">
+                  </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="search-box">
+        <input class="search-txt" type="text" name="" placeholder="Search for Medicine">
+        <a class="search-btn" href="#">
+            <i class="fas fa-search"></i>
+        </a>
+      </div>
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/tether.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="https://cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
+  <script>
+    CKEDITOR.replace('editor1');
+  </script>
+</body>
+</html>

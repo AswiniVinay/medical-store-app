@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Items Expiring Soon</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/bootstrap.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/search.css">
+  <style type="text/css">
+    body
+    {
+      font-size: 1.7em;
+    }
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-toggleable-sm navbar-inverse bg-inverse p-0">
+    <div class="container">
+      <img src="/img/lock.jpg" class="img-responsive img-log" alt="">
+      <div class="collapse navbar-collapse" id="mynavbar"></div>
+    </div>   
+  </div>
+  </nav>
+<div class="container">
+  <h1>Items to Order</h1>
+<br>
+<div class="col-md-4 pull-right">
+  <form id="medexpsoon" method="post" action="/users/itemsExpiringSoon" target="_blank" class="form-inline">
+                <input type="submit" size="35" value="Medicines expiring soon" class="btn btn-danger btn-block" data-toggle="modal">
+              </form>
+          </div>
+  <br>       
+  <form id="myForm" method="post" class="form-inline">
+  <div id="inputs">
+    <input type="text" name="medicines_name" placeholder="medicines_name" class="form-control">
+    <input type="text" name="quantity" placeholder="quantity" class="form-control">
+    <input type="text" name="cost_price" placeholder="cost_price" class="form-control">
+    <button type="button" id="btn-add" class="btn btn-info">Add new</button>
+  </div>
+</form>
+<br>
+<br>
+<table class="table" id="table">
+  <thead>
+    <tr>
+      <th>medicines_name</th>
+      <th>quantity</th>
+      <th>cost_price</th>
+    </tr>
+  </thead>
+  <tbody class="inputmed"></tbody>
+
+</table>
+<br>
+<br>
+<button type="button" class="total btn btn-success">Total</button>
+<p id="tot" style="font-size: 1.5em;">Rs:</p>
+ <form> 
+         <input class="btn btn-warning" id="sendReq" type="button" value="Send Request"/> 
+      </form> 
+<script>
+  //test alert
+  $(function () {
+    $('#btn-add').click(function () {
+      var _id=$('input[name="medicines_name"]').val();
+      var _name=$('input[name="quantity"]').val();
+      var _god=$('input[name="cost_price"]').val();
+      //var _tel=$('input[name="tel"]').val();
+      document.getElementById("myForm").reset();
+      var _tr="<tr><td>"+_id+"</td><td>"+_name+"</td><td>"+_god+"</td><td><button type='button' class='btn btn-danger btn-del'>Delete</button></td></tr>";
+      $('.inputmed').append(_tr);
+    });
+    $('.table tbody').on('click','.btn-del',function() {
+      // body...
+       $(this).closest('tr').remove();
+    });
+  });
+  //total
+  $('.total').click(function () {
+    // body...
+    var table=document.getElementById('table');
+  var sumval=0;
+  for(var i=1;i<table.rows.length;i++)
+  {
+    sumval=sumval+((parseInt(table.rows[i].cells[1].innerHTML))*(parseInt(table.rows[i].cells[2].innerHTML)));
+
+  }
+console.log(sumval);
+$('#tot').append(sumval);
+  });
+  $("#sendReq").click(function(){
+    $("#sendReq").attr("class","btn btn-success");
+$("#sendReq").attr("value","Request Sent");
+    var delayInMilliseconds = 1000; //1 second
+setTimeout(function() {
+  //your code to be executed after 1 second
+location.reload();
+}, delayInMilliseconds); 
+});
+  //$("#print").click( window.print());
+
+</script>
+    <div class="col-md-4 pull-right">
+    <a href="/users">
+                <input type="submit" size="35" value="Go to Dashboard" class="btn btn-primary btn-block" data-toggle="modal">
+              </a>
+          </div>
+</div>
+
+</div>
+
+</body>
+</html>

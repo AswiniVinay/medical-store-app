@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Items Expiring Soon</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/bootstrap.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/search.css">
+  <style type="text/css">
+    body
+    {
+      font-size: 1.7em;
+    }
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-toggleable-sm navbar-inverse bg-inverse p-0">
+    <div class="container">
+      <img src="/img/lock.jpg" class="img-responsive img-log" alt="">
+      <div class="collapse navbar-collapse" id="mynavbar"></div>
+    </div>   
+  </div>
+  </nav>
+<div class="container">
+  <h1>Items Expiring  Soon Within 3 Months</h1>       
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Brand Name</th>
+        <th>Generic Name</th>
+        <th>Batch No.</th>
+        <th>Expiry Date</th>
+        <th>Quantity Left</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if(data.length){ 
+    for(var i = 0;i < data.length;i++) { %>
+  <tr>
+    <td><%=data[i].username%></td>
+    <td><%=data[i].username%></td>
+    <td><%=data[i].salt%></td>
+    <td><%=data[i].password%></td>
+    <td><%=data[i].username%></td>
+  </tr>
+  <% }
+  }else{ %>
+  <tr>
+    <td colspan="3">No user</td>
+  </tr>
+<% } %>
+    </tbody>
+  </table>
+  <form id="myForm" method="post" class="form-inline">
+  <div id="inputs">
+    <input type="text" name="id" placeholder="ID" class="form-control">
+    <input type="text" name="name" placeholder="Name" class="form-control">
+    <input type="text" name="tel" placeholder="telephone" class="form-control">
+    <input type="text" name="god" placeholder="god" class="form-control">
+    <button type="button" id="btn-add" class="btn btn-info">Add new</button>
+  </div>
+</form>
+<br>
+<table class="table" id="table">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>name</th>
+      <th>tel</th>
+      <th>Id</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody class="inputmed"></tbody>
+
+</table>
+<br>
+<br>
+<button type="button" class="total btn btn-success">Total</button>
+<p id="tot" style="font-size: 1.5em;">Rs:</p>
+ <form> 
+         <input class="btn btn-warning" id="print" type="button" value="Print"/> 
+      </form> 
+<script>
+  //test alert
+  $(function () {
+    $('#btn-add').click(function () {
+      var _id=$('input[name="id"]').val();
+      var _name=$('input[name="name"]').val();
+      var _god=$('input[name="god"]').val();
+      var _tel=$('input[name="tel"]').val();
+      document.getElementById("myForm").reset();
+      var _tr="<tr><td>"+_id+"</td><td>"+_name+"</td><td>"+_god+"</td><td>"+_tel+"</td><td><button type='button' class='btn btn-danger btn-del'>Delete</button></td></tr>";
+      $('.inputmed').append(_tr);
+    });
+    $('.table tbody').on('click','.btn-del',function() {
+      // body...
+       $(this).closest('tr').remove();
+    });
+  });
+  //total
+  $('.total').click(function () {
+    // body...
+    var table=document.getElementById('table');
+  var sumval=0;
+  for(var i=1;i<table.rows.length;i++)
+  {
+    sumval=sumval+parseInt(table.rows[i].cells[0].innerHTML);
+
+  }
+console.log(sumval);
+$('#tot').append(sumval);
+  });
+  $("#print").click(function(){
+    $("body").removeClass("container");
+    $(".btn-del").remove();
+    $("#tot").remove();
+    $("#inputs").remove();
+    $("#print").remove();
+    var delayInMilliseconds = 1000; //1 second
+
+setTimeout(function() {
+  //your code to be executed after 1 second
+  $("#print").click( window.print());
+  location.reload(); 
+}, delayInMilliseconds); 
+});
+  //$("#print").click( window.print());
+
+</script>
+    <div class="col-md-4 pull-right">
+    <a href="/users">
+                <input type="submit" size="35" value="Go to Dashboard" class="btn btn-primary btn-block" data-toggle="modal">
+              </a>
+          </div>
+</div>
+
+</div>
+
+</body>
+</html>

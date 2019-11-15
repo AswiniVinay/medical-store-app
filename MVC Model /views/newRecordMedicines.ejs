@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/bootstrap.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/style1.css">
+  <link rel="stylesheet" href="/css/search.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+  <title>Martinque Admin Area</title>
+</head>
+<body>
+<nav class="navbar navbar-toggleable-sm navbar-inverse bg-inverse p-0">
+    <div class="container">
+      <button class="navbar-toggler navbar-toggler-right" data-target="#mynavbar" data-toggle="collapse">
+        <span class="nabbar-toggler-icon"></span>
+      </button>
+      <img src="/img/lock.jpg" class="img-responsive img-log" alt="">
+      <a href="index.html" class=navbar-brand mr-3>Martinque</a>
+    </div>   
+  </nav>
+  <section id="sections" class="py-4 mb-4 bg-faded">
+    <div class="container">
+      <div class="row">
+        <a href="#" class=navbar-brand mr-3><strong>New Med Registration</strong></a>       
+      </div>
+    </div>
+  </section>
+  <div>
+    <form method="post" action="/users/NewRecord/Medicines">
+              <label><strong>Medicine Name</strong></label>
+        <input type="text" name="MedicineName"><br><br>
+        <label><strong>CodeNumber</strong></label>
+        <input type="text" name="MedicineCodeNumber"><br><br>
+        <label><strong>Quantity</strong></label>
+        <input type="text" name="Quantity"><br><br>
+        <label><strong>ExpiryDate</strong></label>
+        <input type="text" name="ExpiryDate" placeholder="1034-55-22"><br><br>
+        <label><strong>BatchNo</strong></label>
+        <input type="text" name="BatchNo"><br><br>
+        <label><strong>CostPrice</strong></label>
+        <input type="text" name="CostPrice"><br><br>
+                <label><strong>SellingPrice</strong></label>
+        <input type="text" name="SellingPrice"><br><br>
+        <button type="submit" class="btn btn-success">Register</button>
+    </form>
+</div>
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/tether.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+</body>
+</html>

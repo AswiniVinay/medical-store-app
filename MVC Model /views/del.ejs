@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Items Expiring Soon</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/bootstrap.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/search.css">
+  <style type="text/css">
+    body
+    {
+      font-size: 1.7em;
+    }
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-toggleable-sm navbar-inverse bg-inverse p-0">
+    <div class="container">
+      <img src="/img/lock.jpg" class="img-responsive img-log" alt="">
+      <div class="collapse navbar-collapse" id="mynavbar"></div>
+    </div>   
+  </div>
+  </nav>
+<div class="container">
+  <h1>Delete Vendors</h1>   
+  <form method="post" action="/users/DeleteRecord/Vendors">
+    <p>Enter Name Of the Medicine</p>
+    <input type="text" name="NameMed">
+    <input type="submit" name="search" class="btn btn-primary">
+  </form>    
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>medicines_name</th>
+        <th>address</th>
+        <th>vid</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if(data.length){ 
+    for(var i = 0;i < data.length;i++) { %>
+  <tr>
+    <td><%=data[i].medicines_name%></td>
+    <td><%=data[i].address%></td>
+    <td><%=data[i].vid%></td>
+  </tr>
+  <% }
+  }else{ %>
+  <tr>
+    <td colspan="3">No user</td>
+  </tr>
+<% } %>
+    </tbody>
+  </table>
+  <form method="post" action="/users/DeleteRecord/Vendors/del">
+    <p>Enter Id of Vendor</p>
+    <input type="text" name="vid">
+    <input type="submit" name="Update" class="btn btn-primary">
+  </form>   
+    <div class="col-md-4">
+    <a href="/users">
+                <input type="submit" size="35" value="Go to Dashboard" class="btn btn-primary btn-block" data-toggle="modal">
+              </a>
+          </div>
+</div>
+
+</div>
+
+</body>
+</html>

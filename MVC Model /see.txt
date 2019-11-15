@@ -1,0 +1,36 @@
+--aspirin         | m101          | 100      | 2020-10-09  | b115     | 8          | 12            |
+-- cetirizine      | m102          | 90       | 2019-12-19  | b105     | 10         | 14            |
+ insulin         | m104          | 50       | 2020-01-30  | b215     | 50         | 60            |
+ methamphetamine | m786          | 30       | 2024-02-28  | b786     | 1000       | 2000          |
+ paracatamol     | m105          | 250      | 2021-03-30  | b415     | 1          | 2             |
+
+
+--'Penicillin', 'm103 ','150','2021-12-30','b104' ,'20 ', '22'
+--'aspirin' , 'm101' , '100' , '2020-10-09' , 'b115 , '8' , '12'
+'cetirizine' , 'm102' , '90' , '2020-12-19' , 'b105 , '10' , '14'
+--'insulin' , 'm104' , '50' , '2020-01-30' , 'b215 , '50' , '60'
+--'methamphetamine' , 'm786' , '30' , '2024-02-28' , 'b786 , '1000' , '2000'
+--'paracetamol' , 'm105' , '250' , '2021-03-30' , 'b415 , '1' , '2'
+
+
+
+vendors
+
+
+cetirizine      | Zyrtec Pvt Ltd           | 95 /, Gulmohar, S V Patel Nagar, Nr Tel Exchange, Andheri(w)    | 02255220861 | Kalki  Sarkar   |       | v101 |
+| aspirin         | altar pvt ltd          | 67,Guru Nanak Market,Dadar(west)                                | 2313131331  | guru govind     |       | v102 |
+| penicillin      | jyoti labs pvt ltd       | 20 , A, Maya Mahal, th Road, Dr Ambedkar Road, Khar (west)      | 8792677531  | Jivin  Parsa    |       | v103 |
+| insulin         | Zirtec pvt ltd           | 42 /, Nehrurdkammanahalibangalore-, Kammanahalli                | 30906053    | Arav  Salvi     |       | v104 |
+| paracatamol     | Crocin labs pvt ltd      | 22/Din Dayal, Nehrurdkammanahalibangalore-, Kammanahalli        | 905036053   | Arav  dubay     |       | v105 |
+| paracatamol     | Crocin labs pvt ltd      | 22/Din Dayal, Nehrurdkammanahalibangalore-, Kammanahalli        | 905036053   | Arav  dubay     |       | v105 |
+| methamphetamine |  Los Pollos Hermanos Ltd | Walt & Skyler House. 3828 Piermont Dr NE Albuquerque, NM 87111. | 111036053   | Walter White    |       | v786
+
+
+'Cetirizine' , 'Zyrtec Pvt Ltd' , '95 /, Gulmohar, S V Patel Nagar, Nr Tel Exchange, Andheri(w)' , '02255220861' , 'Kalki  Sarkar' , 'v101'
+--'aspirin' , 'alatrol pvt ltd' , '67,Guru Nanak Market,Dadar(west)' , '2313131331' , 'guru govind' , 'v102'
+--'penicillin' , 'jyoti labs pvt ltd' , '20 , A, Maya Mahal, th Road, Dr Ambedkar Road, Khar (west)' , '8792677531' , 'Jivin  Parsa' , 'v103'
+'insulin' , 'Zirtec pvt ltd' , '42 /, Nehrurdkammanahalibangalore-, Kammanahalli' , '30906053' , 'Arav  Salvi' , 'v104'
+--'paracatamol' , 'Crocin labs pvt ltd' , '22/Din Dayal, Nehrurdkammanahalibangalore-, Kammanahalli' , '905036053' , 'Arav  dubay' , 'v105'
+'methamphetamine' , 'Los Pollos Hermanos Ltd' , 'Walt & Skyler House. 3828 Piermont Dr NE Albuquerque, NM 87111' , '111036053' , 'Walter White' , 'v786'
+
+

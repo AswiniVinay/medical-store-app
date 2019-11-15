@@ -1,0 +1,21 @@
+body
+{
+  margin: auto;
+  font-family: sans-serif;
+  background: url('background.png');
+}
+ .logo{
+   width: 100px;
+   height: 100px;
+   border-radius: 50%;
+ }
+.login
+{
+  background: #ea8a46;
+  color: #000;
+}
+.loginbox
+{
+  position: absolute;
+  padding: 100px 400px;
+}

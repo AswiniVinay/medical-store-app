@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Recipt
+	</title>
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+     <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/bootstrap.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/search.css">
+    <style type="text/css">
+    	@media print {
+	body {
+		font-size: 12pt;
+		zoom: 3; 
+    -moz-transform: scale(3); 
+    -moz-transform-origin: 0 0;
+	}
+	#print{
+		position: 
+	}
+
+}
+    </style>
+</head>
+<body class="container">
+	<nav class="navbar navbar-toggleable-sm navbar-inverse bg-inverse p-0">
+    <div class="container">
+      <img src="/img/lock.jpg" class="img-responsive img-log" alt="">
+      <div class="collapse navbar-collapse" id="mynavbar"></div>
+    </div>   
+  </div>
+  </nav>
+<h1 align="center"><strong>MARTINIQUE Recipt</strong></h1>	
+<p align="center">Sample structure of 5</p>
+<form id="myForm" method="post" class="form-inline">
+	<div id="inputs">
+		<input type="text" name="medicines_name" placeholder="medicines_name" class="form-control">
+		<input type="text" name="batch_no" placeholder="batch_no" class="form-control">
+		<input type="text" name="expiry_date" placeholder="expiry_date(yyyy-mm-dd)" class="form-control">
+		<input type="text" name="quantity" placeholder="quantity" class="form-control">
+		<input type="text" name="selling_price" placeholder="selling_price" class="form-control">
+		<button type="button" id="btn-add" class="btn btn-info">Add new</button>
+	</div>
+</form>
+<br>
+<table class="table" id="table">
+	<thead>
+		<tr>
+			<th>medicines_name</th>
+			<th>batch_no</th>
+			<th>expiry_date</th>
+			<th>quantity</th>
+			<th>selling_price</th>
+		</tr>
+	</thead>
+	<tbody></tbody>
+
+</table>
+<br>
+<br>
+<button type="button" class="total btn btn-success">Total</button>
+<p id="tot" style="font-size: 1.5em;">Rs:</p>
+ <form method="post" action="/users/SellItem"> 
+         <input class="btn btn-warning" id="print" type="button" value="Print"/> 
+      </form> 
+<script>
+	//test alert
+	$(function () {
+		$('#btn-add').click(function () {
+			var _id=$('input[name="medicines_name"]').val();
+			var _name=$('input[name="batch_no"]').val();
+			var _god=$('input[name="expiry_date"]').val();
+			var _tel=$('input[name="quantity"]').val();
+			var _sp=$('input[name="selling_price"]').val();
+			document.getElementById("myForm").reset();
+			var _tr="<tr><td>"+_id+"</td><td>"+_name+"</td><td>"+_god+"</td><td>"+_tel+"</td><td>"+_sp+"</td><td><button type='button' class='btn btn-danger btn-del'>Delete</button></td></tr>";
+			$('tbody').append(_tr);
+		});
+		$('.table tbody').on('click','.btn-del',function() {
+			// body...
+			 $(this).closest('tr').remove();
+		});
+	});
+	//total
+	$('.total').click(function () {
+		// body...
+		var table=document.getElementById('table');
+	var sumval=0;
+	for(var i=1;i<table.rows.length;i++)
+	{
+		sumval=sumval+((parseInt(table.rows[i].cells[3].innerHTML))*(parseInt(table.rows[i].cells[4].innerHTML)));
+
+	}
+console.log(sumval);
+$('#tot').append(sumval);
+	});
+	$("#print").click(function(){
+    $("body").removeClass("container");
+    $(".btn-del").remove();
+    $("#inputs").remove();
+    $("#print").remove();
+    $("#Dashboard").remove();
+    var delayInMilliseconds = 1000; //1 second
+
+setTimeout(function() {
+  //your code to be executed after 1 second
+  $("#print").click( window.print());
+  location.reload(); 
+}, delayInMilliseconds); 
+});
+	//$("#print").click( window.print());
+
+</script>
+<div class="col-md-4 pull-right">
+    <a href="/users">
+                <input type="submit" size="35" value="Go to Dashboard" id="Dashboard" class="btn btn-primary btn-block" data-toggle="modal">
+              </a>
+          </div>
+</body>
+</html>

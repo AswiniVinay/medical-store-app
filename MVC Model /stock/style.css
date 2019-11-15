@@ -1,0 +1,19 @@
+.img-log{
+    margin: 0 auto;
+    width: 50px;
+}
+form{
+    text-align:center;
+    background: #FFFFE0;
+}
+h1{
+    text-align:center;
+}
+.p{
+    border-width: 5px;
+}
+label {
+    display: inline-block;
+    width: 140px;
+    text-align: left;
+  }​
